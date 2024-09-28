@@ -1,0 +1,5 @@
+goto event "Player Death"
+
+if (inRegion "Yes PvP") {
+    actionBar "&2[%player.name%] &cdied"
+}

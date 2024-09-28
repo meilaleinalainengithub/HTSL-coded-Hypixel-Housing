@@ -1,0 +1,3 @@
+goto command "/mastertools"
+
+giveItem "mastertools" false "Hotbar Slot 8" false

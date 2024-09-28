@@ -1,0 +1,10 @@
+goto event "Player Join"
+
+tp "custom_coordinates" "-3 126 4"
+
+if (stat "Id" == 0) {
+    stat "Id" = globalstat "NextId"
+    globalstat "NextId" += 1
+}
+
+chat "&6&l%player.name% &r&fjoined! &2[ID.MLL%stat.player/id%]"

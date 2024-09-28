@@ -1,0 +1,3 @@
+goto event "Player Quit"
+
+// "Player Left" doesn't have many actions

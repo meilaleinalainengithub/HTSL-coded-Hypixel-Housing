@@ -1,0 +1,26 @@
+goto function "Boss Fight: Start"
+
+function "Boss Fight: Pick Number" true
+function "Boss Fight: Assign UUIds" true
+
+goto function "Boss Fight: Pick Number"
+
+globalstat "nextUUID" = 1
+globalstat "randomNum" = placeholder %random.int/<1> <placeholder %house.guests%>%
+
+goto function "Boss Fight: Assign UUIds"
+
+stat "UUID" = globalstat "nextUUID"
+globalstat "nextUUID" += 1
+
+if (stat "UUID" == globalstat "randomNum") {
+    setTeam "Boss"
+    globalstat "multiplier" = 0.2 * placeholder %house.guests% + 1.5
+    maxHealth = 20 * globalstat "multiplier"
+    applyLayout "Boss Fight: Boss"
+    tp "custom_coordinates" "-3 95 12"
+}
+else {
+    applyLayout "Boss Fight: Anti-"
+    tp "custom_coordinates" "-3 95 -23"
+}
